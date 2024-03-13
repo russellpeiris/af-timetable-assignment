@@ -1,13 +1,15 @@
 import bycrypt from 'bcrypt'
 import { Schema, model } from 'mongoose'
+import { IUser } from '../../interfaces'
 import { hashPassword } from '../../utils/hash.util'
+import { Roles } from '../enums/roles.enum'
 
-export interface IUser extends Document {
-  username: string
-  password: string
-  comparePassword(password: string): Promise<boolean>
-}
-const userSchema = new Schema({
+const userSchema = new Schema<IUser>({
+  nic: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   username: {
     type: String,
     required: true,
@@ -18,15 +20,14 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  favorites: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Product',
-    },
-  ],
-  isAdmin: {
-    type: Boolean,
-    default: false,
+  role: {
+    type: String,
+    default: Roles.STUDENT,
+    enum: Object.values(Roles),
+  },
+  name: {
+    type: String,
+    required: true,
   },
 })
 
