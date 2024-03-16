@@ -2,3 +2,15 @@ error: E11000 duplicate key error collection: test.users index: nic_1 dup key: {
 error: Student validation failed: name: Path `name` is required., username: Path `username` is required., nic: Path `nic` is required.
 error: Student validation failed: name: Path `name` is required., username: Path `username` is required., nic: Path `nic` is required.
 error: User not found
+error: E11000 duplicate key error collection: test.users index: nic_1 dup key: { nic: "200100303000" }
+error: Admin validation failed: aId: Path `aId` is required.
+error: E11000 duplicate key error collection: test.students index: nic_1 dup key: { nic: "2001003033000" }
+error: E11000 duplicate key error collection: test.students index: username_1 dup key: { username: "russ1ell" }
+error: First argument to `Model` constructor must be an object, **not** a string. Make sure you're calling `mongoose.model()`, not `mongoose.Model()`.
+error: E11000 duplicate key error collection: test.students index: nic_1 dup key: { nic: "200003033000" }
+error: E11000 duplicate key error collection: test.students index: nic_1 dup key: { nic: "200003033000" }
+error: User validation failed: password: Path `password` is required.
+error: E11000 duplicate key error collection: test.students index: nic_1 dup key: { nic: "2003033000" }
+error: E11000 duplicate key error collection: test.students index: username_1 dup key: { username: "russll" }
+error: Student with sId: sid1 already exists
+error: Faculty with fId: IT already exists

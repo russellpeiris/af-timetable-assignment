@@ -57,38 +57,24 @@ async function register(req: Request, res: Response) {
   try {
     const { nic, role, username, password, name } = req.body;
 
-    const isExist = await User.findOne({ username });
+    const isExist = await User.findOne({ $or: [{ username }, { nic }] });
     if (isExist) {
       return res.status(409).json({ message: 'User already exists' });
     }
 
-    const newUser = await User.create({ username, password, name, nic });
-    if (!newUser) {
-      return res.status(500).json({ message: 'Failed to create user' });
-    }
-
-    let user;
-    switch (role) {
-      case Roles.STUDENT:
-        user = await createStudent(req.body);
-        generateToken(res, user._id);
-        return res
-          .status(201)
-          .json({ message: 'Student created successfully' });
-
-      case Roles.ADMIN:
-        user = await createAdmin(req.body);
-        generateToken(res, user._id);
-        return res.status(201).json({ message: 'Admin created successfully' });
-
-      case Roles.FACULTY:
-        user = await createFaculty(req.body);
-        generateToken(res, user._id);
-        return res
-          .status(201)
-          .json({ message: 'Faculty created successfully' });
-      default:
-        return res.status(400).json({ message: 'Please provide a role' });
+    let user = null;
+    if (role == Roles.STUDENT) {
+      user = await createStudent(req.body);
+      generateToken(res, user._id);
+      return res.status(201).json({ message: 'Student created successfully' });
+    } else if (role == Roles.ADMIN) {
+      user = await createAdmin(req.body);
+      generateToken(res, user._id);
+      return res.status(201).json({ message: 'Admin created successfully' });
+    } else if (role == Roles.FACULTY) {
+      user = await createFaculty(req.body);
+      generateToken(res, user._id);
+      return res.status(201).json({ message: 'Faculty created successfully' });
     }
   } catch (error: any) {
     logger.error(error.message);
