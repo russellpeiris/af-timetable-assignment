@@ -1,14 +1,13 @@
 import { Schema, model } from 'mongoose';
-import { IAdmin } from '../../interfaces/users.interface';
-import { Roles } from '../enums/roles.enum';
+import { IFaculty } from '../../interfaces';
 
-const adminSchema = new Schema<IAdmin>({
+const facultySchema = new Schema<IFaculty>({
   nic: {
     type: String,
     required: true,
     unique: true,
   },
-  aId: {
+  fId: {
     type: String,
     required: true,
     unique: true,
@@ -25,6 +24,6 @@ const adminSchema = new Schema<IAdmin>({
   },
 });
 
-const Admin = model<IAdmin>('Admin', adminSchema);
+const Faculty = model<IFaculty>('Faculty', facultySchema);
 
-export default Admin;
+export default Faculty;

@@ -1,7 +1,23 @@
-import { Schema, model } from 'mongoose'
-import { IStudent } from '../../interfaces'
+import { Schema, model } from 'mongoose';
+import { IStudent } from '../../interfaces';
+import { Roles } from '../enums/roles.enum';
 
 const studentSchema = new Schema<IStudent>({
+  nic: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+    lowercase: true,
+  },
+  name: {
+    type: String,
+    required: true,
+  },
   sId: {
     type: String,
     required: true,
@@ -23,6 +39,6 @@ const studentSchema = new Schema<IStudent>({
     type: [String],
     default: [],
   },
-})
+});
 
-const Student = model<IStudent>('Student', studentSchema)
+export const Student = model<IStudent>('Student', studentSchema);
