@@ -8,9 +8,13 @@ import { createStudent } from './student.controller';
 import { createAdmin } from './admin.controller';
 import { createFaculty } from './faculty.controller';
 
-const generateToken = (res: Response, userId: Types.ObjectId) => {
+const generateToken = (
+  res: Response,
+  userId: Types.ObjectId,
+  role: Roles,
+): string => {
   const jwtSecret = process.env.JWT_SECRET || '';
-  const token = jwt.sign({ userId }, jwtSecret, {
+  const token = jwt.sign({ userId, role }, jwtSecret, {
     expiresIn: '24h',
   });
 
@@ -20,6 +24,8 @@ const generateToken = (res: Response, userId: Types.ObjectId) => {
     sameSite: 'strict',
     maxAge: 60 * 60 * 1000,
   });
+
+  return token;
 };
 
 const clearToken = (res: Response) => {
@@ -45,8 +51,8 @@ async function login(req: Request, res: Response) {
       return res.status(401).json({ message: 'Invalid credentials' });
     }
 
-    generateToken(res, user._id);
-    res.status(200).json({ message: 'Logged in successfully', user });
+    const access_token = generateToken(res, user._id, user.role as Roles);
+    return res.status(200).json({ message: 'Login successful', access_token });
   } catch (error: any) {
     console.error(error.message);
     return res.status(500).json({ message: error.message });
@@ -65,15 +71,15 @@ async function register(req: Request, res: Response) {
     let user = null;
     if (role == Roles.STUDENT) {
       user = await createStudent(req.body);
-      generateToken(res, user._id);
+      generateToken(res, user._id, user.role as Roles);
       return res.status(201).json({ message: 'Student created successfully' });
     } else if (role == Roles.ADMIN) {
       user = await createAdmin(req.body);
-      generateToken(res, user._id);
+      generateToken(res, user._id, user.role as Roles);
       return res.status(201).json({ message: 'Admin created successfully' });
     } else if (role == Roles.FACULTY) {
       user = await createFaculty(req.body);
-      generateToken(res, user._id);
+      generateToken(res, user._id, user.role as Roles);
       return res.status(201).json({ message: 'Faculty created successfully' });
     }
   } catch (error: any) {

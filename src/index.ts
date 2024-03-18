@@ -2,9 +2,11 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import { config } from 'dotenv';
 import express, { type Express } from 'express';
-import { connectDB } from './config/DBconnect';
-import authRouter from './routes/auth.routes';
 import winston from 'winston';
+import { connectDB } from './config/DBconnect';
+import adminRoutes from './routes/admin.routes';
+import authRouter from './routes/auth.routes';
+import { authenticate, authorizeAdmin } from './middlewares/auth.middleware';
 
 config();
 
@@ -23,6 +25,7 @@ app.use(express.json());
 const port = process.env.PORT ?? 4001;
 
 app.use('/api', authRouter);
+app.use('/api', authenticate, authorizeAdmin, adminRoutes);
 
 // Start the server after connecting to the database
 connectDB()

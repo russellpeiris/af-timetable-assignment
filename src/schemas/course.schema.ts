@@ -1,5 +1,5 @@
-import { Schema } from 'mongoose'
-import { ICourse } from '../../interfaces'
+import { Schema, model } from 'mongoose';
+import { ICourse } from '../../interfaces';
 
 const courseSchema = new Schema<ICourse>({
   name: {
@@ -27,4 +27,8 @@ const courseSchema = new Schema<ICourse>({
     type: String,
     required: true,
   },
-})
+});
+
+const Course = model<ICourse>('Course', courseSchema);
+
+export default Course;

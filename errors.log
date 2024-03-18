@@ -14,3 +14,4 @@ error: E11000 duplicate key error collection: test.students index: nic_1 dup key
 error: E11000 duplicate key error collection: test.students index: username_1 dup key: { username: "russll" }
 error: Student with sId: sid1 already exists
 error: Faculty with fId: IT already exists
+error: User not found
