@@ -1,4 +1,4 @@
-import { Document } from 'mongoose';
+import { Document, Schema } from 'mongoose';
 import { Roles } from '../src/enums/roles.enum';
 
 export interface IUser extends Document {
@@ -15,7 +15,7 @@ export interface IStudent extends IUser {
   faculty: string;
   year: number;
   semester: number;
-  enrolledCourses: string[];
+  enrolledCourses: Schema.Types.ObjectId[];
 }
 
 export interface IFaculty extends IUser {

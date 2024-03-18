@@ -15,3 +15,8 @@ error: E11000 duplicate key error collection: test.students index: username_1 du
 error: Student with sId: sid1 already exists
 error: Faculty with fId: IT already exists
 error: User not found
+error: E11000 duplicate key error collection: test.courses index: courseCode_1 dup key: { courseCode: "CS101" }
+error: Course with code: CS101 already exists
+error: Course validation failed: faculty: Cast to ObjectId failed for value "IT" (type string) at path "faculty" because of "BSONError"
+error: Student validation failed: enrolledCourses.0: Cast to [ObjectId] failed for value "[ 'Mathematics', 'Physics' ]" (type string) at path "enrolledCourses.0" because of "CastError"
+error: Student validation failed: enrolledCourses.0: Cast to [ObjectId] failed for value "[ 'Mathematics', 'Physics' ]" (type string) at path "enrolledCourses.0" because of "CastError" {"timestamp":"2024-03-18T09:55:53.501Z"}

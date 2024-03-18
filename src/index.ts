@@ -7,6 +7,7 @@ import { connectDB } from './config/DBconnect';
 import adminRoutes from './routes/admin.routes';
 import authRouter from './routes/auth.routes';
 import { authenticate, authorizeAdmin } from './middlewares/auth.middleware';
+import commonRoutes from './routes/common.routes';
 
 config();
 
@@ -24,8 +25,9 @@ app.use(express.json());
 
 const port = process.env.PORT ?? 4001;
 
-app.use('/api', authRouter);
-app.use('/api', authenticate, authorizeAdmin, adminRoutes);
+app.use('/api/common', authenticate, commonRoutes);
+app.use('/api/admin', authenticate, authorizeAdmin, adminRoutes);
+app.use('/api/auth', authRouter);
 
 // Start the server after connecting to the database
 connectDB()
@@ -45,7 +47,10 @@ export const logger = winston.createLogger({
   transports: [
     new winston.transports.File({
       filename: 'errors.log',
-      format: winston.format.simple(),
+      format: winston.format.combine(
+        winston.format.timestamp(),
+        winston.format.simple(),
+      ),
     }),
   ],
 });

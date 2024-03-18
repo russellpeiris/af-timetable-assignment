@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 import { IStudent } from '../../interfaces';
-import { Roles } from '../enums/roles.enum';
+import Course from './course.schema';
 
 const studentSchema = new Schema<IStudent>({
   nic: {
@@ -35,10 +35,12 @@ const studentSchema = new Schema<IStudent>({
     type: Number,
     required: true,
   },
-  enrolledCourses: {
-    type: [String],
-    default: [],
-  },
+  enrolledCourses: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: Course,
+    },
+  ],
 });
 
 export const Student = model<IStudent>('Student', studentSchema);

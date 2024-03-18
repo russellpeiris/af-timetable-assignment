@@ -1,28 +1,11 @@
-export interface ICourse {
-  name: string
-  courseCode: string
-  credits: number
-  faculty: string
-  description: string
-  timeTable: string
-}
+import { Document, Schema } from 'mongoose';
+import { IFaculty } from './users.interface';
 
-export interface ITimetable {
-  courseCode: string
-  time: string
-  day: string
-  room: string
-  lecturer: string
-}
-
-export interface IRoom {
-  roomId: string
-  capacity: number
-  resources: string[]
-}
-
-export interface IResource {
-  rId: string
-  name: string
-  isAvailable: boolean
+export interface ICourse extends Document {
+  name: string;
+  courseCode: string;
+  credits: number;
+  faculty: Schema.Types.ObjectId | IFaculty;
+  description: string;
+  timeTable: string;
 }

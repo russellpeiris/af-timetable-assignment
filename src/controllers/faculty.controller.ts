@@ -2,7 +2,7 @@ import { IFaculty } from '../../interfaces';
 import Faculty from '../schemas/faculty.schema';
 import User from '../schemas/user.schema';
 
-export async function createFaculty(faculty: IFaculty): Promise<IFaculty> {
+async function createFaculty(faculty: IFaculty): Promise<IFaculty> {
   try {
     const { nic, role, username, name, password, fId } = faculty;
     const isExist = await Faculty.findOne({ fId });
@@ -18,3 +18,5 @@ export async function createFaculty(faculty: IFaculty): Promise<IFaculty> {
     throw new Error(error.message);
   }
 }
+
+export { createFaculty };
