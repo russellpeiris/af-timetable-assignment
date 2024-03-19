@@ -74,8 +74,8 @@ async function deleteCourse(courseCode: string): Promise<void> {
 
 export {
   createCourse,
+  deleteCourse,
   getAllCourses,
   getCourseById,
   updateCourse,
-  deleteCourse,
 };

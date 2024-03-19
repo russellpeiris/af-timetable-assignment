@@ -20,3 +20,100 @@ error: Course with code: CS101 already exists
 error: Course validation failed: faculty: Cast to ObjectId failed for value "IT" (type string) at path "faculty" because of "BSONError"
 error: Student validation failed: enrolledCourses.0: Cast to [ObjectId] failed for value "[ 'Mathematics', 'Physics' ]" (type string) at path "enrolledCourses.0" because of "CastError"
 error: Student validation failed: enrolledCourses.0: Cast to [ObjectId] failed for value "[ 'Mathematics', 'Physics' ]" (type string) at path "enrolledCourses.0" because of "CastError" {"timestamp":"2024-03-18T09:55:53.501Z"}
+error: [object Object] is not a function {"timestamp":"2024-03-18T10:33:26.967Z"}
+error: Course with code: COMP101 not found {"timestamp":"2024-03-18T19:05:15.071Z"}
+error: Course with code: COMP101 not found {"timestamp":"2024-03-18T19:06:35.666Z"}
+error: TimeTable validation failed: sessions.0: Cast to [ObjectId] failed for value "[\n' +
+  '  {\n' +
+  "    startTime: '09:00',\n" +
+  "    endTime: '11:00',\n" +
+  "    day: 'Monday',\n" +
+  "    room: '60f2c8deebc9a148eb01fc3a',\n" +
+  "    lecturer: 'John Doe'\n" +
+  '  },\n' +
+  '  {\n' +
+  "    startTime: '13:30',\n" +
+  "    endTime: '15:30',\n" +
+  "    day: 'Wednesday',\n" +
+  "    room: '60f2c8deebc9a148eb01fc3b',\n" +
+  "    lecturer: 'Jane Smith'\n" +
+  '  }\n' +
+  ']" (type string) at path "sessions.0" because of "CastError" {"timestamp":"2024-03-18T19:06:58.960Z"}
+error: Course with code: COMP101 not found {"timestamp":"2024-03-18T19:08:07.415Z"}
+error: Course with code: undefined not found {"timestamp":"2024-03-18T19:16:06.965Z"}
+error: Course with code: undefined not found {"timestamp":"2024-03-18T19:16:36.151Z"}
+error: Course with code: COMP101 not found {"timestamp":"2024-03-18T19:17:16.367Z"}
+error: Course with code: COMP101 not found {"timestamp":"2024-03-18T19:25:06.112Z"}
+error: TimeTable validation failed: courseCode: Path `courseCode` is required. {"timestamp":"2024-03-19T12:15:08.227Z"}
+error: Timetable for course: CS1 already exists {"timestamp":"2024-03-19T12:16:47.743Z"}
+error: Timetable for course: CS1 already exists {"timestamp":"2024-03-19T12:28:43.125Z"}
+error: TimeTable validation failed: sessions.0: Cast to [ObjectId] failed for value "[\n' +
+  '  {\n' +
+  "    startTime: '09:00',\n" +
+  "    endTime: '11:00',\n" +
+  "    day: 'Monday',\n" +
+  "    room: '60f2c8deebc9a148eb01fc3a',\n" +
+  "    lecturer: 'John Doe'\n" +
+  '  },\n' +
+  '  {\n' +
+  "    startTime: '13:30',\n" +
+  "    endTime: '15:30',\n" +
+  "    day: 'Wednesday',\n" +
+  "    room: '60f2c8deebc9a148eb01fc3b',\n" +
+  "    lecturer: 'Jane Smith'\n" +
+  '  }\n' +
+  ']" (type string) at path "sessions.0" because of "CastError" {"timestamp":"2024-03-19T12:28:57.546Z"}
+error: TimeTable validation failed: sessions.0: Cast to [ObjectId] failed for value "[\n' +
+  '  {\n' +
+  "    startTime: '09:00',\n" +
+  "    endTime: '11:00',\n" +
+  "    day: 'Monday',\n" +
+  "    lecturer: 'John Doe'\n" +
+  '  },\n' +
+  '  {\n' +
+  "    startTime: '13:30',\n" +
+  "    endTime: '15:30',\n" +
+  "    day: 'Wednesday',\n" +
+  "    lecturer: 'Jane Smith'\n" +
+  '  }\n' +
+  ']" (type string) at path "sessions.0" because of "CastError" {"timestamp":"2024-03-19T12:29:32.855Z"}
+error: TimeTable validation failed: sessions.0: Cast to [ObjectId] failed for value "[\n' +
+  '  {\n' +
+  "    startTime: '09:00',\n" +
+  "    endTime: '11:00',\n" +
+  "    day: 'Monday',\n" +
+  "    lecturer: 'John Doe'\n" +
+  '  },\n' +
+  '  {\n' +
+  "    startTime: '13:30',\n" +
+  "    endTime: '15:30',\n" +
+  "    day: 'Wednesday',\n" +
+  "    lecturer: 'Jane Smith'\n" +
+  '  }\n' +
+  ']" (type string) at path "sessions.0" because of "CastError" {"timestamp":"2024-03-19T12:30:14.569Z"}
+error: First argument to `Model` constructor must be an object, **not** a string. Make sure you're calling `mongoose.model()`, not `mongoose.Model()`. {"timestamp":"2024-03-19T12:54:27.595Z"}
+error: First argument to `Model` constructor must be an object, **not** a string. Make sure you're calling `mongoose.model()`, not `mongoose.Model()`. {"timestamp":"2024-03-19T12:56:29.140Z"}
+error: First argument to `Model` constructor must be an object, **not** a string. Make sure you're calling `mongoose.model()`, not `mongoose.Model()`. {"timestamp":"2024-03-19T12:56:31.615Z"}
+error: First argument to `Model` constructor must be an object, **not** a string. Make sure you're calling `mongoose.model()`, not `mongoose.Model()`. {"timestamp":"2024-03-19T12:56:34.133Z"}
+error: First argument to `Model` constructor must be an object, **not** a string. Make sure you're calling `mongoose.model()`, not `mongoose.Model()`. {"timestamp":"2024-03-19T12:57:31.636Z"}
+error: First argument to `Model` constructor must be an object, **not** a string. Make sure you're calling `mongoose.model()`, not `mongoose.Model()`. {"timestamp":"2024-03-19T12:57:56.420Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-19T13:32:40.630Z"}
+error: Timetable for course: CS1 already exists {"timestamp":"2024-03-19T13:33:55.276Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-19T15:17:22.186Z"}
+error: Cannot read properties of undefined (reading '_id') {"timestamp":"2024-03-19T15:19:12.348Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-19T15:22:24.688Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-19T15:25:24.941Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-19T15:27:10.209Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-19T15:28:33.163Z"}
+error: Cannot read properties of undefined (reading 'day') {"timestamp":"2024-03-19T15:30:01.987Z"}
+error: Cannot read properties of undefined (reading 'day') {"timestamp":"2024-03-19T15:30:54.268Z"}
+error: Cannot read properties of undefined (reading 'day') {"timestamp":"2024-03-19T15:31:20.384Z"}
+error: Cannot read properties of undefined (reading 'day') {"timestamp":"2024-03-19T15:31:52.467Z"}
+error: Cannot read properties of undefined (reading 'day') {"timestamp":"2024-03-19T15:32:44.051Z"}
+error: Cannot read properties of undefined (reading 'day') {"timestamp":"2024-03-19T15:33:06.360Z"}
+error: Invalid update pipeline operator: "startTime" {"timestamp":"2024-03-19T15:33:18.958Z"}
+error: Invalid update pipeline operator: "lecturer" {"timestamp":"2024-03-19T15:37:30.566Z"}
+error: TimeTableSession validation failed: day: Path `day` is required., endTime: Path `endTime` is required., startTime: Path `startTime` is required. {"timestamp":"2024-03-19T15:38:22.487Z"}
+error: Timetable for course: 65f99f9ce53f4a8dbe004dbc not found {"timestamp":"2024-03-19T16:48:47.488Z"}
+error: Course with code: COMP101 not found {"timestamp":"2024-03-19T18:10:30.221Z"}
+error: Timetable for course: CS1 already exists {"timestamp":"2024-03-19T18:10:44.153Z"}

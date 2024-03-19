@@ -1,5 +1,5 @@
-import { Schema, model } from 'mongoose'
-import { INotification } from '../../interfaces'
+import { Schema, model } from 'mongoose';
+import { INotification } from '../../interfaces';
 
 const notificationSchema = new Schema({
   message: {
@@ -18,8 +18,8 @@ const notificationSchema = new Schema({
     type: Date,
     default: Date.now,
   },
-})
+});
 
-const Notification = model<INotification>('Notification', notificationSchema)
+const Notification = model<INotification>('Notification', notificationSchema);
 
-export default Notification
+export default Notification;

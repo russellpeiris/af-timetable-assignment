@@ -1,8 +1,8 @@
-import bycrypt from 'bcrypt'
-import { Schema, model } from 'mongoose'
-import { IUser } from '../../interfaces'
-import { hashPassword } from '../../utils/hash.util'
-import { Roles } from '../enums/roles.enum'
+import bycrypt from 'bcrypt';
+import { Schema, model } from 'mongoose';
+import { IUser } from '../../interfaces';
+import { hashPassword } from '../../utils/hash.util';
+import { Roles } from '../enums/roles.enum';
 
 const userSchema = new Schema<IUser>({
   nic: {
@@ -29,20 +29,20 @@ const userSchema = new Schema<IUser>({
     type: String,
     required: true,
   },
-})
+});
 
 userSchema.pre('save', async function (next) {
-  const user = this
+  const user = this;
   if (user.isModified('password')) {
-    user.password = await hashPassword(user.password)
+    user.password = await hashPassword(user.password);
   }
-  next()
-})
+  next();
+});
 
 userSchema.methods.comparePassword = async function (password: string) {
-  return await bycrypt.compare(password, this.password)
-}
+  return await bycrypt.compare(password, this.password);
+};
 
-const User = model<IUser>('User', userSchema)
+const User = model<IUser>('User', userSchema);
 
-export default User
+export default User;

@@ -1,19 +1,19 @@
-import { config } from 'dotenv'
-import mongoose from 'mongoose'
+import { config } from 'dotenv';
+import mongoose from 'mongoose';
 
-mongoose.set('strictQuery', false)
+mongoose.set('strictQuery', false);
 
 export const connectDB = async () => {
-  config()
-  const uri = process.env.MONGO_URI
+  config();
+  const uri = process.env.MONGO_URI;
   if (!uri) {
-    throw new Error('MongoDB URI is not defined')
+    throw new Error('MongoDB URI is not defined');
   }
   try {
-    await mongoose.connect(uri)
-    console.log('MongoDB connected')
+    await mongoose.connect(uri);
+    console.log('MongoDB connected');
   } catch (error: any) {
-    console.error(error.message)
-    process.exit(1)
+    console.error(error.message);
+    process.exit(1);
   }
-}
+};

@@ -1,30 +1,19 @@
 import { Schema, model } from 'mongoose';
 import { ITimetable } from '../../interfaces/timeTable.interface';
-import ClassRoom from './room.schema';
-import Course from './course.schema';
+import TimeTableSession from './session.schema';
 
 const timeTableSchema = new Schema<ITimetable>({
-  course: {
-    type: Schema.Types.ObjectId,
-    ref: Course,
-    required: true,
-  },
-  time: {
+  courseCode: {
     type: String,
     required: true,
+    unique: true,
   },
-  day: {
-    type: String,
-    required: true,
-  },
-  room: {
-    type: Schema.Types.ObjectId,
-    ref: ClassRoom,
-  },
-  lecturer: {
-    type: String,
-    required: true,
-  },
+  sessions: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: TimeTableSession,
+    },
+  ],
 });
 
 const TimeTable = model<ITimetable>('TimeTable', timeTableSchema);
