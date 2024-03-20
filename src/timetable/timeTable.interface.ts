@@ -1,6 +1,5 @@
 import { Document, Schema } from 'mongoose';
-import { ICourse } from './course.interface';
-import { IRoom } from './room.interface';
+import { IRoom } from '../classroom/room.interface';
 
 export interface ITimetable extends Document {
   courseCode: string;

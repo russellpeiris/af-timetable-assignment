@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 import { Roles } from '../enums/roles.enum';
-import User from '../schemas/user.schema';
+import User from '../user/user.schema';
 
 export async function authenticate(
   req: Request,

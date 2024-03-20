@@ -2,8 +2,8 @@ import { Router } from 'express';
 import {
   enrollInCourse,
   unEnrollFromCourse,
-} from '../controllers/student.controller';
-import { getTimetableByCourseCode } from '../controllers/timetableController';
+} from '../student/student.controller';
+import { getTimetableByCourseCode } from '../timetable/timetable.controller';
 
 const commonRoutes = Router();
 commonRoutes.post('/enroll', enrollInCourse);

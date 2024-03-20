@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
+import Admin from './src/admin/admin.schema';
+import ClassRoom from './src/classroom/room.schema';
 import { connectDB } from './src/config/DBconnect';
 import { Roles } from './src/enums/roles.enum';
-import Resource from './src/schemas/resource.schema';
-import Admin from './src/schemas/admin.schema';
-import User from './src/schemas/user.schema';
+import Resource from './src/resource/resource.schema';
+import User from './src/user/user.schema';
 
 const resources = [
   {
@@ -32,6 +33,21 @@ const admin = {
   aId: 'aId1',
 };
 
+const classRooms = [
+  {
+    roomId: 'A401',
+    capacity: 50,
+  },
+  {
+    roomId: 'B501',
+    capacity: 100,
+  },
+  {
+    roomId: 'B502',
+    capacity: 150,
+  },
+];
+
 connectDB();
 
 // Function to drop the 'test' collection
@@ -56,6 +72,7 @@ async function seedDatabase() {
     await Resource.insertMany(resources);
     await User.create(admin);
     await Admin.create(admin);
+    await ClassRoom.insertMany(classRooms);
 
     console.log('Database seeded successfully.');
   } catch (error) {

@@ -5,16 +5,16 @@ import {
   adminGetAllCourses,
   adminGetCourse,
   adminUpdateCourse,
-} from '../controllers/admin.controller';
+} from '../admin/admin.controller';
+import { createResource } from '../resource/resource.controller';
+import { createClassRoom } from '../classroom/room.controller';
 import {
   addSessionToTimetable,
   createTimetable,
   deleteSessionFromTimetable,
   deleteTimetable,
   updateTimetableSession,
-} from '../controllers/timetableController';
-import { createClassRoom } from '../controllers/room.controller';
-import { createResource } from '../controllers/resource.controller';
+} from '../timetable/timetable.controller';
 
 const adminRoutes = Router();
 

@@ -1,7 +1,6 @@
-import { IFaculty } from './../../interfaces/users.interface';
 import { Schema, model } from 'mongoose';
-import { ICourse } from '../../interfaces';
-import Faculty from './faculty.schema';
+import Faculty from '../faculty/faculty.schema';
+import { ICourse } from './course.interface';
 
 const courseSchema = new Schema<ICourse>({
   name: {
@@ -24,11 +23,9 @@ const courseSchema = new Schema<ICourse>({
   },
   description: {
     type: String,
-    required: true,
   },
   timeTable: {
     type: String,
-    required: true,
   },
 });
 

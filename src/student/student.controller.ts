@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 import { logger } from '..';
-import { IStudent } from '../../interfaces';
-import Course from '../schemas/course.schema';
-import StudentEnrollment from '../schemas/enrollment.schema';
-import { Student } from '../schemas/student.schema';
-import User from '../schemas/user.schema';
+import Course from '../course/course.schema';
+import StudentEnrollment from '../enrollment/enrollment.schema';
+import User from '../user/user.schema';
+import { IStudent } from '../user/users.interface';
+import { Student } from './student.schema';
 
 async function createStudent(student: IStudent): Promise<IStudent> {
   try {

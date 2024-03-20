@@ -2,11 +2,11 @@ import { Request, Response } from 'express';
 import jwt from 'jsonwebtoken';
 import { Types } from 'mongoose';
 import { logger } from '..';
+import { createAdmin } from '../admin/admin.controller';
 import { Roles } from '../enums/roles.enum';
-import User from '../schemas/user.schema';
-import { createStudent } from './student.controller';
-import { createAdmin } from './admin.controller';
-import { createFaculty } from './faculty.controller';
+import { createFaculty } from '../faculty/faculty.controller';
+import { createStudent } from '../student/student.controller';
+import User from '../user/user.schema';
 
 const generateToken = (
   res: Response,

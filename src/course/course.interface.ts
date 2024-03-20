@@ -1,5 +1,5 @@
 import { Document, Schema } from 'mongoose';
-import { IFaculty } from './users.interface';
+import { IFaculty } from '../user/users.interface';
 
 export interface ICourse extends Document {
   name: string;

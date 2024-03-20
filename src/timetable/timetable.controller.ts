@@ -1,10 +1,10 @@
 import { Request, Response } from 'express';
 import { logger } from '..';
-import { ITimetableSession } from '../../interfaces/timeTable.interface';
-import Course from '../schemas/course.schema';
-import TimeTableSession from '../schemas/session.schema';
-import TimeTable from '../schemas/timetable.schema';
-import ClassRoom from '../schemas/room.schema';
+import ClassRoom from '../classroom/room.schema';
+import Course from '../course/course.schema';
+import TimeTableSession from './session.schema';
+import { ITimetableSession } from './timeTable.interface';
+import TimeTable from './timetable.schema';
 
 async function createTimetable(req: Request, res: Response) {
   try {
@@ -15,12 +15,10 @@ async function createTimetable(req: Request, res: Response) {
     }
     const isExist = await TimeTable.findOne({ courseCode });
     if (isExist) {
-      return res
-        .status(409)
-        .json({
-          message: `Timetable for course: ${courseCode} already exists`,
-          isExist,
-        });
+      return res.status(409).json({
+        message: `Timetable for course: ${courseCode} already exists`,
+        isExist,
+      });
     }
     const newTimetable = await TimeTable.create({ courseCode });
     if (sessions && sessions.length > 0) {
@@ -209,10 +207,10 @@ async function getTimetableByCourseCode(req: Request, res: Response) {
 }
 
 export {
-  createTimetable,
-  updateTimetableSession,
-  deleteTimetable,
   addSessionToTimetable,
+  createTimetable,
   deleteSessionFromTimetable,
+  deleteTimetable,
   getTimetableByCourseCode,
+  updateTimetableSession,
 };

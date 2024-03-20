@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import Resource from '../schemas/resource.schema';
 import { logger } from '..';
+import Resource from './resource.schema';
 
 async function createResource(req: Request, res: Response) {
   try {

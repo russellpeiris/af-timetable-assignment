@@ -1,7 +1,7 @@
 import { Schema, model } from 'mongoose';
-import { INotification } from '../../interfaces';
+import { INotification } from './notification.interface';
 
-const notificationSchema = new Schema({
+const notificationSchema = new Schema<INotification>({
   message: {
     type: String,
     required: true,

@@ -1,6 +1,5 @@
 import { Schema, model } from 'mongoose';
-import { IAdmin } from '../../interfaces/users.interface';
-import { Roles } from '../enums/roles.enum';
+import { IAdmin } from '../user/users.interface';
 
 const adminSchema = new Schema<IAdmin>({
   nic: {

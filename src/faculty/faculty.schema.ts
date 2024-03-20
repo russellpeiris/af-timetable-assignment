@@ -1,5 +1,5 @@
 import { Schema, model } from 'mongoose';
-import { IFaculty } from '../../interfaces';
+import { IFaculty } from '../user/users.interface';
 
 const facultySchema = new Schema<IFaculty>({
   nic: {

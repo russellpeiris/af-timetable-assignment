@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
-import { ITimetableSession } from '../../interfaces/timeTable.interface';
-import ClassRoom from './room.schema';
+import ClassRoom from '../classroom/room.schema';
+import { ITimetableSession } from './timeTable.interface';
 
 const timeTableSessionSchema = new Schema<ITimetableSession>({
   startTime: {

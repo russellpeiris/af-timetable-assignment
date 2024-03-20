@@ -1,8 +1,8 @@
 import bycrypt from 'bcrypt';
 import { Schema, model } from 'mongoose';
-import { IUser } from '../../interfaces';
-import { hashPassword } from '../../utils/hash.util';
 import { Roles } from '../enums/roles.enum';
+import { IUser } from './users.interface';
+import { hashPassword } from '../../utils/hash.util';
 
 const userSchema = new Schema<IUser>({
   nic: {

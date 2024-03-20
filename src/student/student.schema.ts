@@ -1,6 +1,7 @@
 import { Schema, model } from 'mongoose';
-import { IStudent } from '../../interfaces';
-import Course from './course.schema';
+import Course from '../course/course.schema';
+import Faculty from '../faculty/faculty.schema';
+import { IStudent } from '../user/users.interface';
 
 const studentSchema = new Schema<IStudent>({
   nic: {
@@ -24,8 +25,8 @@ const studentSchema = new Schema<IStudent>({
     unique: true,
   },
   faculty: {
-    type: String,
-    required: true,
+    type: Schema.Types.ObjectId,
+    ref: Faculty,
   },
   year: {
     type: Number,

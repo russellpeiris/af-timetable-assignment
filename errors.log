@@ -134,3 +134,8 @@ error: Room with roomId: 60f2c8deebc9a148eb01fc3b not found {"timestamp":"2024-0
 error: TimeTableSession validation failed: room: Cast to ObjectId failed for value "A401" (type string) at path "room" because of "BSONError" {"timestamp":"2024-03-20T07:50:06.977Z"}
 error: Room with roomId: 65fa902a318e515e58e2b2f9 not found {"timestamp":"2024-03-20T07:50:34.154Z"}
 error: Timetable for course: CS1 not found {"timestamp":"2024-03-20T07:59:43.570Z"}
+error: Cannot set headers after they are sent to the client {"timestamp":"2024-03-20T08:55:09.480Z"}
+error: Faculty with fId: IT not found {"timestamp":"2024-03-20T08:57:26.147Z"}
+error: Course validation failed: timeTable: Path `timeTable` is required. {"timestamp":"2024-03-20T08:58:29.881Z"}
+error: Timetable for course: CS2 not found {"timestamp":"2024-03-20T09:08:44.597Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-20T09:08:51.771Z"}

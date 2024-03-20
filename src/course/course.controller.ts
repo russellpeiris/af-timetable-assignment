@@ -1,6 +1,6 @@
-import { ICourse } from '../../interfaces';
-import Course from '../schemas/course.schema';
-import Faculty from '../schemas/faculty.schema';
+import Faculty from '../faculty/faculty.schema';
+import { ICourse } from './course.interface';
+import Course from './course.schema';
 
 async function createCourse(course: ICourse): Promise<ICourse> {
   try {

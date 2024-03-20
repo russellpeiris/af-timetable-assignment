@@ -1,7 +1,7 @@
-import { Schema, model, Document, Types } from 'mongoose';
-import { Student } from './student.schema';
-import Course from './course.schema';
-import { IStudentEnrollment } from '../../interfaces/enrollment.interface';
+import { Schema, model } from 'mongoose';
+import Course from '../course/course.schema';
+import { Student } from '../student/student.schema';
+import { IStudentEnrollment } from './enrollment.interface';
 
 const studentEnrollmentSchema = new Schema<IStudentEnrollment>({
   student: {

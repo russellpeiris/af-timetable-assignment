@@ -1,6 +1,6 @@
 import { Document, Schema } from 'mongoose';
-import { Roles } from '../src/enums/roles.enum';
-import { ICourse } from './course.interface';
+import { ICourse } from '../course/course.interface';
+import { Roles } from '../enums/roles.enum';
 
 export interface IUser extends Document {
   nic: string;
@@ -13,7 +13,7 @@ export interface IUser extends Document {
 
 export interface IStudent extends Omit<IUser, 'comparePassword'> {
   sId: string;
-  faculty: string;
+  faculty: Schema.Types.ObjectId | IFaculty;
   year: number;
   semester: number;
   enrolledCourses: Schema.Types.ObjectId[] | ICourse[];

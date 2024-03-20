@@ -1,15 +1,15 @@
 import { Request, Response } from 'express';
 import { logger } from '..';
-import { IAdmin } from '../../interfaces';
-import Admin from '../schemas/admin.schema';
-import User from '../schemas/user.schema';
 import {
   createCourse,
   deleteCourse,
   getAllCourses,
   getCourseById,
   updateCourse,
-} from './course.controller';
+} from '../course/course.controller';
+import User from '../user/user.schema';
+import { IAdmin } from '../user/users.interface';
+import Admin from './admin.schema';
 
 async function createAdmin(admin: IAdmin): Promise<IAdmin> {
   try {
@@ -99,10 +99,10 @@ async function adminGetCourse(req: Request, res: Response) {
 // Timetable
 
 export {
-  createAdmin,
   adminCreateCourse,
-  adminUpdateCourse,
   adminDeleteCourse,
   adminGetAllCourses,
   adminGetCourse,
+  adminUpdateCourse,
+  createAdmin,
 };

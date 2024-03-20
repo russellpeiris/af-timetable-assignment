@@ -1,6 +1,6 @@
-import { IFaculty } from '../../interfaces';
-import Faculty from '../schemas/faculty.schema';
-import User from '../schemas/user.schema';
+import User from '../user/user.schema';
+import { IFaculty } from '../user/users.interface';
+import Faculty from './faculty.schema';
 
 async function createFaculty(faculty: IFaculty): Promise<IFaculty> {
   try {

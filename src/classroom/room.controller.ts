@@ -1,19 +1,17 @@
 import { Request, Response } from 'express';
-import ClassRoom from '../schemas/room.schema';
 import { logger } from '..';
-import Resource from '../schemas/resource.schema';
+import Resource from '../resource/resource.schema';
+import ClassRoom from './room.schema';
 
 async function createClassRoom(req: Request, res: Response) {
   try {
     const { classRoom, resourceIds } = req.body;
     const isExist = await ClassRoom.findOne({ roomId: classRoom.roomId });
     if (isExist) {
-      return res
-        .status(409)
-        .json({
-          message: `ClassRoom with roomId: ${classRoom.roomId} already exists`,
-          isExist,
-        });
+      return res.status(409).json({
+        message: `ClassRoom with roomId: ${classRoom.roomId} already exists`,
+        isExist,
+      });
     }
     const newClassRoom = new ClassRoom(classRoom);
 
