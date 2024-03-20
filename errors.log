@@ -139,3 +139,13 @@ error: Faculty with fId: IT not found {"timestamp":"2024-03-20T08:57:26.147Z"}
 error: Course validation failed: timeTable: Path `timeTable` is required. {"timestamp":"2024-03-20T08:58:29.881Z"}
 error: Timetable for course: CS2 not found {"timestamp":"2024-03-20T09:08:44.597Z"}
 error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-20T09:08:51.771Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-20T10:21:21.548Z"}
+error: Timetable for course: SEQPM not found {"timestamp":"2024-03-20T10:22:17.675Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-20T10:22:34.614Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-20T10:24:13.085Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-20T10:27:12.747Z"}
+error: Student validation failed: faculty: Cast to ObjectId failed for value "Computing" (type string) at path "faculty" because of "BSONError" {"timestamp":"2024-03-20T18:49:24.097Z"}
+error: Student validation failed: faculty: Cast to ObjectId failed for value "Computing" (type string) at path "faculty" because of "BSONError" {"timestamp":"2024-03-20T18:50:53.546Z"}
+error: Room with roomId: 65fabae5844b0c20bfa5044e not found {"timestamp":"2024-03-20T19:00:21.521Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-20T19:02:02.142Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-20T19:04:16.822Z"}

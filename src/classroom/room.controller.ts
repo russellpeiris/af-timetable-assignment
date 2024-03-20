@@ -34,4 +34,15 @@ async function createClassRoom(req: Request, res: Response) {
   }
 }
 
-export { createClassRoom };
+async function getAllClassRooms(req: Request, res: Response) {
+  try {
+    const classRooms = await ClassRoom.find().populate('resources');
+    return res.status(200).json(classRooms);
+  } catch (error: any) {
+    console.log(error.message);
+    logger.error(error.message);
+    return res.status(500).json({ message: error.message });
+  }
+}
+
+export { createClassRoom, getAllClassRooms };

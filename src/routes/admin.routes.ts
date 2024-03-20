@@ -6,8 +6,15 @@ import {
   adminGetCourse,
   adminUpdateCourse,
 } from '../admin/admin.controller';
-import { createResource } from '../resource/resource.controller';
-import { createClassRoom } from '../classroom/room.controller';
+import {
+  assignResourceToRoom,
+  createResource,
+  unassignResourceFromRoom,
+} from '../resource/resource.controller';
+import {
+  createClassRoom,
+  getAllClassRooms,
+} from '../classroom/room.controller';
 import {
   addSessionToTimetable,
   createTimetable,
@@ -15,23 +22,35 @@ import {
   deleteTimetable,
   updateTimetableSession,
 } from '../timetable/timetable.controller';
+import { getAllEnrollments } from '../enrollment/enrollment.controller';
 
 const adminRoutes = Router();
 
-adminRoutes.post('/courses', adminCreateCourse);
-adminRoutes.patch('/courses/:id', adminUpdateCourse);
-adminRoutes.delete('/courses/:id', adminDeleteCourse);
-adminRoutes.get('/courses', adminGetAllCourses);
-adminRoutes.get('/courses/:id', adminGetCourse);
-adminRoutes.post('/timeTable', createTimetable);
-adminRoutes.delete('/timeTable/:courseCode', deleteTimetable);
-adminRoutes.post('/timeTable/:courseCode', addSessionToTimetable);
-adminRoutes.patch('/timeTable/session/:sessionId', updateTimetableSession);
+// Courses routes
+adminRoutes.post('/courses', adminCreateCourse); // Create a new course
+adminRoutes.patch('/courses/:id', adminUpdateCourse); // Update a course
+adminRoutes.delete('/courses/:id', adminDeleteCourse); // Delete a course
+adminRoutes.get('/courses', adminGetAllCourses); // Get all courses
+adminRoutes.get('/courses/:id', adminGetCourse); // Get a specific course by ID
+
+// Timetable routes
+adminRoutes.post('/timeTable', createTimetable); // Create a new timetable
+adminRoutes.delete('/timeTable/:courseCode', deleteTimetable); // Delete a timetable
+adminRoutes.post('/timeTable/:courseCode', addSessionToTimetable); // Add a session to a timetable
+adminRoutes.patch('/timeTable/session/:sessionId', updateTimetableSession); // Update a session in a timetable
 adminRoutes.delete(
   '/timeTable/session/:courseCode/:sessionId',
   deleteSessionFromTimetable,
-);
-adminRoutes.post('/rooms', createClassRoom);
-adminRoutes.post('/resource', createResource);
+); // Delete a session from a timetable
+
+// Rooms and Resources routes
+adminRoutes.post('/rooms', createClassRoom); // Create a new classroom
+adminRoutes.get('/rooms', getAllClassRooms); // Get all classrooms
+adminRoutes.post('/resource', createResource); // Create a new resource
+adminRoutes.post('/resource/assign', assignResourceToRoom); // Assign a resource to a classroom
+adminRoutes.post('/resource/unassign', unassignResourceFromRoom); // Unassign a resource from a classroom
+
+// Enrollment routes
+adminRoutes.get('/enrollments', getAllEnrollments); // Get all enrollments
 
 export default adminRoutes;

@@ -23,7 +23,7 @@ async function createCourse(course: ICourse): Promise<ICourse> {
 
 async function getAllCourses(): Promise<ICourse[]> {
   try {
-    const courses = await Course.find().populate('faculty');
+    const courses = await Course.find().populate('faculty', 'fId');
     return courses;
   } catch (error: any) {
     throw new Error(error.message);
@@ -32,7 +32,10 @@ async function getAllCourses(): Promise<ICourse[]> {
 
 async function getCourseById(courseCode: string): Promise<ICourse | null> {
   try {
-    const course = await Course.findOne({ courseCode }).populate('faculty');
+    const course = await Course.findOne({ courseCode }).populate(
+      'faculty',
+      'fId',
+    );
     if (!course) {
       throw new Error(`Course with code: ${courseCode} not found`);
     }

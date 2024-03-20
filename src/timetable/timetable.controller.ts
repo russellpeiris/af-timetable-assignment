@@ -89,6 +89,7 @@ async function createTimetableSession(
 ): Promise<ITimetableSession> {
   try {
     const existingSessions = await TimeTableSession.find({
+      room: sessionData.room,
       day: sessionData.day,
       $or: [
         {
