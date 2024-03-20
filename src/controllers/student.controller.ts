@@ -26,7 +26,7 @@ async function createStudent(student: IStudent): Promise<IStudent> {
 async function enrollInCourse(req: Request, res: Response) {
   try {
     const { sId, courseCode } = req.body;
-    const student = await Student.findOne({ sId });
+    const student = await Student.findOne({ sId }).populate('enrolledCourses');
     if (!student) {
       return res
         .status(404)
@@ -43,9 +43,10 @@ async function enrollInCourse(req: Request, res: Response) {
       enrolledCourses: course._id,
     });
     if (isEnrolled) {
-      return res
-        .status(400)
-        .json({ message: `Student already enrolled in course: ${courseCode}` });
+      return res.status(400).json({
+        message: `Student already enrolled in course: ${courseCode}`,
+        student,
+      });
     }
 
     const enroll = await StudentEnrollment.create({
@@ -62,7 +63,7 @@ async function enrollInCourse(req: Request, res: Response) {
     await student.save();
     return res
       .status(200)
-      .json({ message: `Student enrolled in course: ${courseCode}` });
+      .json({ message: `Student enrolled in course: ${courseCode}`, student });
   } catch (error: any) {
     console.error(error.message);
     logger.error(error.message);
@@ -90,9 +91,10 @@ async function unEnrollFromCourse(req: Request, res: Response) {
       enrolledCourses: course._id,
     });
     if (!isEnrolled) {
-      return res
-        .status(400)
-        .json({ message: `Student not enrolled in course: ${courseCode}` });
+      return res.status(400).json({
+        message: `Student not enrolled in course: ${courseCode}`,
+        student,
+      });
     }
 
     const enrollment = await StudentEnrollment.findOneAndDelete({
@@ -104,16 +106,17 @@ async function unEnrollFromCourse(req: Request, res: Response) {
         .status(500)
         .json({ message: 'Failed to unenroll student from course' });
     }
-    await Student.findOneAndUpdate(
+    const updatedStudent = await Student.findOneAndUpdate(
       { sId },
       {
         $pull: { enrolledCourses: course._id },
       },
+      { new: true },
     );
-
-    return res
-      .status(200)
-      .json({ message: `Student unenrolled from course: ${courseCode}` });
+    return res.status(200).json({
+      message: `Student unenrolled from course: ${courseCode}`,
+      updatedStudent,
+    });
   } catch (error: any) {
     console.error(error.message);
     logger.error(error.message);

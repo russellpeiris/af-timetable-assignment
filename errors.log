@@ -117,3 +117,20 @@ error: TimeTableSession validation failed: day: Path `day` is required., endTime
 error: Timetable for course: 65f99f9ce53f4a8dbe004dbc not found {"timestamp":"2024-03-19T16:48:47.488Z"}
 error: Course with code: COMP101 not found {"timestamp":"2024-03-19T18:10:30.221Z"}
 error: Timetable for course: CS1 already exists {"timestamp":"2024-03-19T18:10:44.153Z"}
+error: User not found {"timestamp":"2024-03-19T19:24:30.177Z"}
+error: Resource validation failed: isAvailable: Path `isAvailable` is required., name: Path `name` is required., rId: Path `rId` is required. {"timestamp":"2024-03-19T19:25:12.475Z"}
+error: ClassRoom validation failed: roomId: Path `roomId` is required. {"timestamp":"2024-03-20T03:57:28.294Z"}
+error: User not found {"timestamp":"2024-03-20T05:41:22.338Z"}
+error: User not found {"timestamp":"2024-03-20T05:41:51.356Z"}
+error: E11000 duplicate key error collection: test.admins index: username_1 dup key: { username: "admin" } {"timestamp":"2024-03-20T05:43:44.869Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-20T06:06:54.249Z"}
+error: Course with code: CS1 already exists {"timestamp":"2024-03-20T06:34:09.080Z"}
+error: Course with code: CS1 not found {"timestamp":"2024-03-20T07:25:42.286Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-20T07:25:51.089Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-20T07:35:21.886Z"}
+error: Room with roomId: 60f2c8deebc9a148eb01fc3b not found {"timestamp":"2024-03-20T07:35:57.919Z"}
+error: Room with roomId: 60f2c8deebc9a148eb01fc3b not found {"timestamp":"2024-03-20T07:37:24.145Z"}
+error: Room with roomId: 60f2c8deebc9a148eb01fc3b not found {"timestamp":"2024-03-20T07:39:44.741Z"}
+error: TimeTableSession validation failed: room: Cast to ObjectId failed for value "A401" (type string) at path "room" because of "BSONError" {"timestamp":"2024-03-20T07:50:06.977Z"}
+error: Room with roomId: 65fa902a318e515e58e2b2f9 not found {"timestamp":"2024-03-20T07:50:34.154Z"}
+error: Timetable for course: CS1 not found {"timestamp":"2024-03-20T07:59:43.570Z"}

@@ -22,7 +22,7 @@ const generateToken = (
     httpOnly: true,
     secure: process.env.NODE_ENV !== 'development',
     sameSite: 'strict',
-    maxAge: 60 * 60 * 1000,
+    maxAge: 24 * 60 * 60 * 1000, // 24 hours in milliseconds
   });
 
   return token;
@@ -71,16 +71,22 @@ async function register(req: Request, res: Response) {
     let user = null;
     if (role == Roles.STUDENT) {
       user = await createStudent(req.body);
-      generateToken(res, user._id, user.role as Roles);
-      return res.status(201).json({ message: 'Student created successfully' });
+      // generateToken(res, user._id, user.role as Roles);
+      return res
+        .status(201)
+        .json({ message: 'Student created successfully', user });
     } else if (role == Roles.ADMIN) {
       user = await createAdmin(req.body);
-      generateToken(res, user._id, user.role as Roles);
-      return res.status(201).json({ message: 'Admin created successfully' });
+      // generateToken(res, user._id, user.role as Roles);
+      return res
+        .status(201)
+        .json({ message: 'Admin created successfully', user });
     } else if (role == Roles.FACULTY) {
       user = await createFaculty(req.body);
-      generateToken(res, user._id, user.role as Roles);
-      return res.status(201).json({ message: 'Faculty created successfully' });
+      // generateToken(res, user._id, user.role as Roles);
+      return res
+        .status(201)
+        .json({ message: 'Faculty created successfully', user });
     }
   } catch (error: any) {
     logger.error(error.message);

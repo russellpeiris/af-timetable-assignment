@@ -11,7 +11,7 @@ export interface IUser extends Document {
   comparePassword(password: string): Promise<boolean>;
 }
 
-export interface IStudent extends IUser {
+export interface IStudent extends Omit<IUser, 'comparePassword'> {
   sId: string;
   faculty: string;
   year: number;
@@ -19,10 +19,10 @@ export interface IStudent extends IUser {
   enrolledCourses: Schema.Types.ObjectId[] | ICourse[];
 }
 
-export interface IFaculty extends IUser {
+export interface IFaculty extends Omit<IUser, 'comparePassword'> {
   fId: string;
 }
 
-export interface IAdmin extends IUser {
+export interface IAdmin extends Omit<IUser, 'comparePassword'> {
   aId: string;
 }

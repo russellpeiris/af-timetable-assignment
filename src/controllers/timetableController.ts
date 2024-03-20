@@ -4,6 +4,7 @@ import { ITimetableSession } from '../../interfaces/timeTable.interface';
 import Course from '../schemas/course.schema';
 import TimeTableSession from '../schemas/session.schema';
 import TimeTable from '../schemas/timetable.schema';
+import ClassRoom from '../schemas/room.schema';
 
 async function createTimetable(req: Request, res: Response) {
   try {
@@ -14,11 +15,20 @@ async function createTimetable(req: Request, res: Response) {
     }
     const isExist = await TimeTable.findOne({ courseCode });
     if (isExist) {
-      throw new Error(`Timetable for course: ${courseCode} already exists`);
+      return res
+        .status(409)
+        .json({
+          message: `Timetable for course: ${courseCode} already exists`,
+          isExist,
+        });
     }
     const newTimetable = await TimeTable.create({ courseCode });
     if (sessions && sessions.length > 0) {
       for (const session of sessions) {
+        const room = await ClassRoom.findById(session.room);
+        if (!room) {
+          throw new Error(`Room with roomId: ${session.room} not found`);
+        }
         const newSession = await createTimetableSession(session);
         newTimetable.sessions.push(newSession._id);
       }

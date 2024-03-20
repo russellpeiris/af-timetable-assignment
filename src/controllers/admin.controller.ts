@@ -32,7 +32,9 @@ async function adminCreateCourse(req: Request, res: Response) {
   try {
     const newCourse = await createCourse(req.body);
     if (newCourse) {
-      return res.status(201).json({ message: 'Course created successfully' });
+      return res
+        .status(201)
+        .json({ message: 'Course created successfully', newCourse });
     }
   } catch (error: any) {
     logger.error(error.message);

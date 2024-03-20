@@ -13,6 +13,8 @@ import {
   deleteTimetable,
   updateTimetableSession,
 } from '../controllers/timetableController';
+import { createClassRoom } from '../controllers/room.controller';
+import { createResource } from '../controllers/resource.controller';
 
 const adminRoutes = Router();
 
@@ -29,5 +31,7 @@ adminRoutes.delete(
   '/timeTable/session/:courseCode/:sessionId',
   deleteSessionFromTimetable,
 );
+adminRoutes.post('/rooms', createClassRoom);
+adminRoutes.post('/resource', createResource);
 
 export default adminRoutes;
