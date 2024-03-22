@@ -5,6 +5,8 @@ import Course from '../course/course.schema';
 import TimeTableSession from './session.schema';
 import { ITimetableSession } from './timeTable.interface';
 import TimeTable from './timetable.schema';
+import { MailOptions } from 'nodemailer/lib/sendmail-transport';
+import { sendMail } from '../config/nodemailer';
 
 async function createTimetable(req: Request, res: Response) {
   try {
@@ -154,6 +156,14 @@ async function updateTimetableSession(req: Request, res: Response) {
       updatedSessionData,
       { new: true },
     );
+
+    const mailOptions: MailOptions = {
+      from: process.env.GMAIL,
+      to: 'ardpeiris@gmail.com',
+      subject: 'Updated Session',
+      text: `Session with id: ${sessionId} has been updated`,
+    };
+    await sendMail(mailOptions);
     return res.status(200).json(updatedSession);
   } catch (error: any) {
     throw new Error(error.message);

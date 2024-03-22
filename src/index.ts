@@ -8,6 +8,7 @@ import adminRoutes from './routes/admin.routes';
 import authRouter from './routes/auth.routes';
 import { authenticate, authorizeAdmin } from './middlewares/auth.middleware';
 import commonRoutes from './routes/common.routes';
+import nodemailer from 'nodemailer';
 
 config();
 

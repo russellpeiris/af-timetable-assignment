@@ -1,4 +1,4 @@
-import bycrypt from 'bcrypt';
+import bcrypt from 'bcrypt';
 import { Schema, model } from 'mongoose';
 import { Roles } from '../enums/roles.enum';
 import { IUser } from './users.interface';
@@ -40,7 +40,7 @@ userSchema.pre('save', async function (next) {
 });
 
 userSchema.methods.comparePassword = async function (password: string) {
-  return await bycrypt.compare(password, this.password);
+  return await bcrypt.compare(password, this.password);
 };
 
 const User = model<IUser>('User', userSchema);
