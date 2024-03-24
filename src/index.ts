@@ -4,19 +4,15 @@ import { config } from 'dotenv';
 import express, { type Express } from 'express';
 import winston from 'winston';
 import { connectDB } from './config/DBconnect';
+import { authenticate, authorizeAdmin } from './middlewares/auth.middleware';
 import adminRoutes from './routes/admin.routes';
 import authRouter from './routes/auth.routes';
-import { authenticate, authorizeAdmin } from './middlewares/auth.middleware';
 import commonRoutes from './routes/common.routes';
-import nodemailer from 'nodemailer';
 
 config();
 
 export const app: Express = express();
-//Hello world
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+
 app.use(cookieParser());
 app.use(
   cors({

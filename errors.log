@@ -168,3 +168,6 @@ error: User not found {"timestamp":"2024-03-24T13:27:00.418Z"}
 error: User not found {"timestamp":"2024-03-24T13:29:40.181Z"}
 error: User not found {"timestamp":"2024-03-24T13:32:36.838Z"}
 error: connection establishment was cancelled {"timestamp":"2024-03-24T13:41:58.661Z"}
+error: E11000 duplicate key error collection: viva.admins index: nic_1 dup key: { nic: "1251231231" } {"timestamp":"2024-03-24T14:03:10.084Z"}
+error: User not found {"timestamp":"2024-03-24T14:03:10.341Z"}
+error: Faculty with fId: IT already exists {"timestamp":"2024-03-24T14:30:22.127Z"}
