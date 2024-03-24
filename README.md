@@ -80,5 +80,7 @@ npm run format
 npm run seed
 ```
 
+## Postman Documentation and endpoints
+[Open Postman](https://elements.getpostman.com/redirect?entityId=24977137-f5d871f5-173a-44cf-85e5-a10cb8b17ef6&entityType=collection)
 ## Database Design
 ![image](https://github.com/sliitcsse/assignment-01-russellpeiris/assets/99230526/63d2e771-b0af-4469-9c32-c096037aef6d)
