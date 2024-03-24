@@ -24,7 +24,7 @@ This is a project for AF Assignment focusing on a Timetable system.
 2. Navigate to the project directory:
 
     ```bash
-    cd af-assignment-timetable
+    cd assignment-01-russellpeiris
     ```
 
 3. Install dependencies:
