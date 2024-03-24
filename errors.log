@@ -149,3 +149,16 @@ error: Student validation failed: faculty: Cast to ObjectId failed for value "Co
 error: Room with roomId: 65fabae5844b0c20bfa5044e not found {"timestamp":"2024-03-20T19:00:21.521Z"}
 error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-20T19:02:02.142Z"}
 error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-20T19:04:16.822Z"}
+error: Course with code: CS10 not found {"timestamp":"2024-03-24T04:50:47.161Z"}
+error: Course with code: AF already exists {"timestamp":"2024-03-24T04:50:47.978Z"}
+error: Course with code: CS1 not found {"timestamp":"2024-03-24T04:50:49.412Z"}
+error: Timetable for course: 65f99f9ce53f4a8dbe004dbc not found {"timestamp":"2024-03-24T04:51:00.077Z"}
+error: Course with code: CS1 not found {"timestamp":"2024-03-24T04:51:01.804Z"}
+error: Timetable for course: CS1 not found {"timestamp":"2024-03-24T04:51:02.316Z"}
+error: Course with code: CS10 not found {"timestamp":"2024-03-24T04:54:04.556Z"}
+error: Course with code: AF already exists {"timestamp":"2024-03-24T04:54:05.413Z"}
+error: Course with code: CS1 not found {"timestamp":"2024-03-24T04:54:06.744Z"}
+error: Timetable for course: 65f99f9ce53f4a8dbe004dbc not found {"timestamp":"2024-03-24T04:54:16.163Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-24T04:54:17.010Z"}
+error: Course with code: CS1 not found {"timestamp":"2024-03-24T04:54:17.495Z"}
+error: Timetable for course: CS1 not found {"timestamp":"2024-03-24T04:54:17.923Z"}
