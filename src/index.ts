@@ -12,8 +12,11 @@ import nodemailer from 'nodemailer';
 
 config();
 
-const app: Express = express();
-
+export const app: Express = express();
+//Hello world
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 app.use(cookieParser());
 app.use(
   cors({
@@ -31,16 +34,11 @@ app.use('/api/admin', authenticate, authorizeAdmin, adminRoutes);
 app.use('/api/auth', authRouter);
 
 // Start the server after connecting to the database
-connectDB()
-  .then(() => {
-    app.listen(port, () => {
-      console.log(`Server is running on port ${port}`);
-    });
-  })
-  .catch((error: Error) => {
-    console.error('Failed to start the server', error.message);
-    process.exit(1);
-  });
+connectDB();
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
 
 export const logger = winston.createLogger({
   level: 'info',
