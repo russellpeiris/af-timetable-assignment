@@ -18,7 +18,7 @@ This is a project for AF Assignment focusing on a Timetable system.
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/russellpeiris/af-assignment-timetable.git
+    git clone https://github.com/sliitcsse/assignment-01-russellpeiris.git
     ```
 
 2. Navigate to the project directory:
