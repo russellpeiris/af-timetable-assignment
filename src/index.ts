@@ -30,11 +30,16 @@ app.use('/api/admin', authenticate, authorizeAdmin, adminRoutes);
 app.use('/api/auth', authRouter);
 
 // Start the server after connecting to the database
-connectDB();
-
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+connectDB()
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`Server running on http://localhost:${port}`);
+    });
+  })
+  .catch((error) => {
+    logger.error(error.message);
+    console.log(error.message);
+  });
 
 export const logger = winston.createLogger({
   level: 'info',

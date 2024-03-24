@@ -171,3 +171,22 @@ error: connection establishment was cancelled {"timestamp":"2024-03-24T13:41:58.
 error: E11000 duplicate key error collection: viva.admins index: nic_1 dup key: { nic: "1251231231" } {"timestamp":"2024-03-24T14:03:10.084Z"}
 error: User not found {"timestamp":"2024-03-24T14:03:10.341Z"}
 error: Faculty with fId: IT already exists {"timestamp":"2024-03-24T14:30:22.127Z"}
+error: Student validation failed: faculty: Cast to ObjectId failed for value "Computing" (type string) at path "faculty" because of "BSONError" {"timestamp":"2024-03-24T16:58:55.983Z"}
+error: Student validation failed: faculty: Cast to ObjectId failed for value "Computing" (type string) at path "faculty" because of "BSONError" {"timestamp":"2024-03-24T16:59:24.115Z"}
+error: Course with code: CS10 not found {"timestamp":"2024-03-24T17:00:59.756Z"}
+error: Cannot set headers after they are sent to the client {"timestamp":"2024-03-24T17:26:32.253Z"}
+error: Cannot set headers after they are sent to the client {"timestamp":"2024-03-24T17:39:38.922Z"}
+error: Student with sId: IT21249266 already exists {"timestamp":"2024-03-24T17:41:53.373Z"}
+error: Course with code: AF not found {"timestamp":"2024-03-24T17:41:55.316Z"}
+error: Timetable for course: 65f99f9ce53f4a8dbe004dbc not found {"timestamp":"2024-03-24T17:42:01.946Z"}
+error: Timetable for course: AF not found {"timestamp":"2024-03-24T17:42:02.390Z"}
+error: Course with code: CS1 not found {"timestamp":"2024-03-24T17:42:02.820Z"}
+error: Timetable for course: CS1 not found {"timestamp":"2024-03-24T17:42:03.253Z"}
+error: Student with sId: IT21249266 already exists {"timestamp":"2024-03-24T17:42:53.302Z"}
+error: Student with sId: IT21249266 already exists {"timestamp":"2024-03-24T17:43:06.006Z"}
+error: Student validation failed: faculty: Cast to ObjectId failed for value "Computing" (type string) at path "faculty" because of "BSONError" {"timestamp":"2024-03-24T17:43:32.770Z"}
+error: Course with code: AF not found {"timestamp":"2024-03-24T17:44:55.142Z"}
+error: Timetable for course: 65f99f9ce53f4a8dbe004dbc not found {"timestamp":"2024-03-24T17:45:01.856Z"}
+error: Timetable for course: AF not found {"timestamp":"2024-03-24T17:45:02.263Z"}
+error: Course with code: CS1 not found {"timestamp":"2024-03-24T17:45:02.684Z"}
+error: Timetable for course: CS1 not found {"timestamp":"2024-03-24T17:45:03.118Z"}

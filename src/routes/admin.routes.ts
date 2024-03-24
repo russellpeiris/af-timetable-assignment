@@ -12,6 +12,7 @@ import { getAllEnrollments } from '../enrollment/enrollment.controller';
 import {
   assignResourceToRoom,
   createResource,
+  getResources,
   unassignResourceFromRoom,
 } from '../resource/resource.controller';
 import {
@@ -45,6 +46,7 @@ adminRoutes.get('/rooms', getAllClassRooms); // Get all classrooms
 adminRoutes.post('/resource', createResource); // Create a new resource
 adminRoutes.post('/resource/assign', assignResourceToRoom); // Assign a resource to a classroom
 adminRoutes.post('/resource/unassign', unassignResourceFromRoom); // Unassign a resource from a classroom
+adminRoutes.get('/resources', getResources); // Get all resources
 
 // Enrollment routes
 adminRoutes.get('/enrollments', getAllEnrollments); // Get all enrollments
