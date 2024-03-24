@@ -80,6 +80,12 @@ npm run format
 npm run seed
 ```
 
+## Run tests
+
+```bash
+npm run test
+```
+
 ## Postman Documentation and endpoints
 [Open Postman](https://elements.getpostman.com/redirect?entityId=24977137-f5d871f5-173a-44cf-85e5-a10cb8b17ef6&entityType=collection)
 ## Database Design
