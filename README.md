@@ -79,3 +79,6 @@ npm run format
 ```bash
 npm run seed
 ```
+
+## Database Design
+![image](https://github.com/sliitcsse/assignment-01-russellpeiris/assets/99230526/63d2e771-b0af-4469-9c32-c096037aef6d)
