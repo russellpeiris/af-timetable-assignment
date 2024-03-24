@@ -5,6 +5,7 @@ import { connectDB } from './src/config/DBconnect';
 import { Roles } from './src/enums/roles.enum';
 import Resource from './src/resource/resource.schema';
 import User from './src/user/user.schema';
+import { dropDatabase } from './utils/db.utils';
 
 const resources = [
   {
@@ -49,22 +50,6 @@ const classRooms = [
 ];
 
 connectDB();
-
-// Function to drop the 'test' collection
-async function dropTestCollection() {
-  try {
-    // Wait for the database connection to open
-    await new Promise((resolve) => mongoose.connection.once('open', resolve));
-
-    // Drop the 'test' collection
-    await mongoose.connection.db.dropDatabase();
-    console.log('Test collection dropped successfully.');
-  } catch (error) {
-    console.error('Error dropping test collection:', error);
-    throw error; // Throw error to indicate failure
-  }
-}
-
 // Function to seed the database
 async function seedDatabase() {
   try {
@@ -84,7 +69,7 @@ async function seedDatabase() {
 // Reset and seed the database
 async function resetAndSeedDatabase() {
   try {
-    await dropTestCollection(); // Drop the 'test' collection
+    await dropDatabase(); // Drop the database
     await seedDatabase(); // Seed the database
   } catch (error) {
     console.error('Error resetting and seeding database:', error);

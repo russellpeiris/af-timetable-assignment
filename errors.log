@@ -162,3 +162,9 @@ error: Timetable for course: 65f99f9ce53f4a8dbe004dbc not found {"timestamp":"20
 error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-03-24T04:54:17.010Z"}
 error: Course with code: CS1 not found {"timestamp":"2024-03-24T04:54:17.495Z"}
 error: Timetable for course: CS1 not found {"timestamp":"2024-03-24T04:54:17.923Z"}
+error: Operation `courses.find()` buffering timed out after 10000ms {"timestamp":"2024-03-24T06:55:32.106Z"}
+error: User not found {"timestamp":"2024-03-24T13:24:37.591Z"}
+error: User not found {"timestamp":"2024-03-24T13:27:00.418Z"}
+error: User not found {"timestamp":"2024-03-24T13:29:40.181Z"}
+error: User not found {"timestamp":"2024-03-24T13:32:36.838Z"}
+error: connection establishment was cancelled {"timestamp":"2024-03-24T13:41:58.661Z"}

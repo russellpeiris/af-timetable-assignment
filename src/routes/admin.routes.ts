@@ -2,19 +2,18 @@ import { Router } from 'express';
 import {
   adminCreateCourse,
   adminDeleteCourse,
-  adminGetAllCourses,
-  adminGetCourse,
   adminUpdateCourse,
 } from '../admin/admin.controller';
+import {
+  createClassRoom,
+  getAllClassRooms,
+} from '../classroom/room.controller';
+import { getAllEnrollments } from '../enrollment/enrollment.controller';
 import {
   assignResourceToRoom,
   createResource,
   unassignResourceFromRoom,
 } from '../resource/resource.controller';
-import {
-  createClassRoom,
-  getAllClassRooms,
-} from '../classroom/room.controller';
 import {
   addSessionToTimetable,
   createTimetable,
@@ -22,7 +21,6 @@ import {
   deleteTimetable,
   updateTimetableSession,
 } from '../timetable/timetable.controller';
-import { getAllEnrollments } from '../enrollment/enrollment.controller';
 
 const adminRoutes = Router();
 
@@ -30,8 +28,6 @@ const adminRoutes = Router();
 adminRoutes.post('/courses', adminCreateCourse); // Create a new course
 adminRoutes.patch('/courses/:id', adminUpdateCourse); // Update a course
 adminRoutes.delete('/courses/:id', adminDeleteCourse); // Delete a course
-adminRoutes.get('/courses', adminGetAllCourses); // Get all courses
-adminRoutes.get('/courses/:id', adminGetCourse); // Get a specific course by ID
 
 // Timetable routes
 adminRoutes.post('/timeTable', createTimetable); // Create a new timetable
