@@ -8,11 +8,27 @@ import { authenticate, authorizeAdmin } from './middlewares/auth.middleware';
 import adminRoutes from './routes/admin.routes';
 import authRouter from './routes/auth.routes';
 import commonRoutes from './routes/common.routes';
+import helmet from 'helmet';
+import rateLimit from 'express-rate-limit';
 
 config();
 
 export const app: Express = express();
 
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  limit: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
+  standardHeaders: 'draft-7', // draft-6: `RateLimit-*` headers; draft-7: combined `RateLimit` header
+  legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
+});
+app.use(
+  helmet({
+    xssFilter: true, // Enable XSS filter
+    frameguard: { action: 'deny' }, // Prevent Clickjacking
+  }),
+);
+
+app.use(limiter);
 app.use(cookieParser());
 app.use(
   cors({
