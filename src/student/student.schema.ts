@@ -25,7 +25,7 @@ const studentSchema = new Schema<IStudent>({
     unique: true,
   },
   faculty: {
-    type: Schema.Types.ObjectId,
+    type: String,
     ref: Faculty,
   },
   year: {

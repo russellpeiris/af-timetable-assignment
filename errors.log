@@ -190,3 +190,7 @@ error: Timetable for course: 65f99f9ce53f4a8dbe004dbc not found {"timestamp":"20
 error: Timetable for course: AF not found {"timestamp":"2024-03-24T17:45:02.263Z"}
 error: Course with code: CS1 not found {"timestamp":"2024-03-24T17:45:02.684Z"}
 error: Timetable for course: CS1 not found {"timestamp":"2024-03-24T17:45:03.118Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-04-28T06:50:54.182Z"}
+error: Student validation failed: faculty: Cast to ObjectId failed for value "IT" (type string) at path "faculty" because of "BSONError" {"timestamp":"2024-04-28T06:55:59.091Z"}
+error: Timetable for course: CS not found {"timestamp":"2024-04-28T06:58:53.432Z"}
+error: Timetable conflict: There is already a session scheduled at this time {"timestamp":"2024-04-28T06:59:12.449Z"}
